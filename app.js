@@ -18,6 +18,7 @@ const ExpressError = require("./utils/ExpressError.js");
 app.use(express.static(path.join(__dirname,"/public")));
 const listingRouter = require("./routes/listing.js");
 const reviewRouter = require("./routes/review.js");
+
 const userRouter = require("./routes/user.js");
 const session = require("express-session");
 const MongoStore = require("connect-mongo");
@@ -100,6 +101,9 @@ app.use((req,res,next)=>{
 //     res.send(registerdUser);
 // });
 
+app.get("/",(req,res)=>{
+    res.redirect("/listings");
+});
 // for use all listing routes
 app.use("/listings",listingRouter);
 // for use all review routes
