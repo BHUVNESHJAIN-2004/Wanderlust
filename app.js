@@ -100,6 +100,9 @@ app.use((req,res,next)=>{
 //     res.send(registerdUser);
 // });
 
+app.get("/"(req,res)=>{
+    res.redirect("/listings");
+});
 // for use all listing routes
 app.use("/listings",listingRouter);
 // for use all review routes
